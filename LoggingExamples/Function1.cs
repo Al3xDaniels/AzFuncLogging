@@ -17,9 +17,11 @@ namespace LoggingExamples
         [Function("Function1")]
         public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
         {
-            _logger.LogInformation("C# HTTP trigger function processed a request.", new { FunctionName = "MyHttpTrigger" });
+            _logger.LogCritical("CritTest", new { FunctionName = "MyHttpTrigger" });
+            _logger.LogWarning("WarnTest", new { FunctionName = "MyHttpTrigger" });
+            _logger.LogInformation("InfoTest", new { FunctionName = "MyHttpTrigger" });
 
-            return new OkObjectResult("Welcome to Azure Functions!");
+            return new OkObjectResult("Hello World!");
         }
     }
 }
