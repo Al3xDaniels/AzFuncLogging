@@ -17,10 +17,11 @@ namespace LoggingExamples
         [Function("Function1")]
         public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
         {
-            _logger.LogCritical("CritTest", new { FunctionName = "MyHttpTrigger" });
-            _logger.LogWarning("WarnTest", new { FunctionName = "MyHttpTrigger" });
-            _logger.LogInformation("InfoTest", new { FunctionName = "MyHttpTrigger" });
-
+            _logger.LogInformation("This is my Informational Test");
+            _logger.LogWarning("This is my Warning Test");
+            _logger.LogError("This is my Error Test");
+            _logger.LogCritical("This is my Critical Test");
+            
             return new OkObjectResult("Hello World!");
         }
     }
