@@ -1,8 +1,8 @@
-# Managing Log Levels in Azure Functions
+# Managing Log Levels in Azure Functions With Isolated Worker
 
 ## Important Considerations
 
-When working with Azure Functions and isolated process workers, it is crucial to understand that the Functions host and the isolated process worker maintain separate configurations for log levels and other settings. Configurations made in `host.json` for Application Insights will not impact the logging behavior of the worker, and vice versa. To ensure proper logging across both the host and the worker, configurations must be applied at both layers.
+When working with Azure Functions and **isolated process workers**, it is crucial to understand that the Functions host and the isolated process worker maintain separate configurations for log levels and other settings. Configurations made in `host.json` for Application Insights will not impact the logging behavior of the worker, and vice versa. To ensure proper logging across both the host and the worker, configurations must be applied at both layers.
 
 ## Configuration with ILogger and ILogger<T>
 
